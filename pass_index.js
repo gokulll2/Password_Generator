@@ -10,7 +10,7 @@
  const indicator = document.querySelector("[data-indicator]");
  const generateBin = document.querySelector('.generateBtn');
  const allCheckBox=document.querySelectorAll("input[type=checkbox]"); 
-
+const symbols='~`!@#$%^&*()_-+={[}]|:;"<,>.?/';
  let password="";
  let passwordLength=15;
  let checkCount=1;
@@ -28,5 +28,48 @@ function setIndicator(color) {
 function getrndInteger(min,max)
 {
     return Math.floor(Math.random() * (max-min))+min;
-    
+}
+function generateRandomInteger(){
+    return getrndInteger(0,9);
+}
+function generateLowerCase(){
+    return String.fromCharCode(getrndInteger(97,123));
+
+}
+function generateUpperCase()
+{
+    return String.fromCharCode(getrndInteger(65,91));
+}
+function generateSymbols()
+{
+      const randNum=getrndInteger(0,symbols.length);
+      return symbols.charAt[randNum];
+}
+function calculateStrength() {
+     let hasUpper=false;
+     let hasNum=false;
+     let hasLower=false;
+     let hasSymbol=false;
+
+     if(uppercaseCheck.checked)
+     {
+        hasUpper=true;
+     }
+     if(lowercaseCheck.checked)
+     {
+        hasLower=true;
+     }
+     if(numbersCheck.checked)
+     {
+        hasNum=true;
+     }
+     if(symbolsCheck.checked)
+     {
+        hasSymbol=true;
+     }
+     if(hasUpper && hasLower && (hasNum || hasSymbol) && passwordLength>=8)
+     {
+        setIndicator('#0f0');
+     }
+     else if((hasUpper)
 }
