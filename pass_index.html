@@ -13,7 +13,7 @@
         <div class="display-wrapper">
 
             <input readonly placeholder="Password" class="display" data-passwordDisplay>
-            <button>
+            <button data-copy>
                 <span data-copyMsg></span>
                 <img src="IMG/copy.svg" alt="copy" width="23" height="23">
              </button>
@@ -22,7 +22,7 @@
             <!-- Password length section -->
              <div class="length-container">
                 <p>Password Length</p>
-                <p data-attribute>0</p>
+                <p data-Length>0</p>
              </div>
              <!-- slider -->
              <input type="range" min="1" class="slider" step="1" data-lengthSlider>
@@ -33,15 +33,15 @@
                 <label for="uppercase">Includes Uppercase letters</label>   
              </div>
              <div>
-                <input type="checkbox"  id="uppercase">
+                <input type="checkbox"  id="lowercase">
                 <label for="lowercase">Includes Lowercase letters</label>   
              </div>
              <div>
-                <input type="checkbox"  id="uppercase">
+                <input type="checkbox"  id="numbers">
                 <label for="numbers">Includes Numbers</label>   
              </div>
              <div>
-                <input type="checkbox"  id="uppercase">
+                <input type="checkbox"  id="symbols">
                 <label for="symbols">Includes Symbols</label>   
              </div>
 
@@ -53,8 +53,9 @@
 
              <!-- generate response -->
              <!-- <div></div> -->
-             <button class="generateButton"> Generate Response </button>
+             <button class="generateBtn"> Generate Password </button>
         </div>
     </div>
+    <script src="pass_index.js"></script>
 </body>
 </html>
