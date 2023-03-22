@@ -31,7 +31,7 @@ function getrndInteger(min,max)
 }
 function generateRandomInteger(){
     return getrndInteger(0,9);
-}
+} 
 function generateLowerCase(){
     return String.fromCharCode(getrndInteger(97,123));
 
@@ -71,5 +71,37 @@ function calculateStrength() {
      {
         setIndicator('#0f0');
      }
-     else if((hasUpper)
+     else if((hasUpper||hasLower) && (hasNum||hasSymbol) && passwordLength>=5)
+     {
+        setIndicator('#ff0');
+     }
+     else{
+        setIndicator('#f00'); 
+     }
+}
+
+ async function copyContent() {
+   try{
+      await navigator.clipboardtext.writeText(passwordDisplay.value);
+      copyMsg.innerText="copied";
+   }
+   catch(e)
+   {
+    copyMsg.innerText="Failed";
+   }
+
+   //to make copy vala span visible
+
+   copyMsg.classList.add('Active');
+   setTimeout( () => {
+    copyMsg.classList.remove("Active");
+   },2000);
+    
+}
+inputSlider.addEventListener('input' , (e) =>{
+    passwordLength=e.target.value;
+    handleSlider();
+})
+function generatePassword() {
+      
 }
