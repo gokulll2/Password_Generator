@@ -16,6 +16,7 @@ const symbols='~`!@#$%^&*()_-+={[}]|:;"<,>.?/';
  let passwordLength=10;
  let checkCount=0;
 handleSlider();
+setIndicator('#ccc');
  //set passwordLength
  function handleSlider() {
     inputSlider.value=passwordLength;
@@ -25,6 +26,7 @@ handleSlider();
 function setIndicator(color) {
     indicator.style.backgroundColor = color;
     //shadow vala khud karna
+    indicator.style.boxShadow = `0px 0px 12px 1px ${color}`
 }
 function getrndInteger(min,max)
 {
