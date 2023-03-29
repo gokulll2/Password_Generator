@@ -144,7 +144,7 @@ function shufflePassword(array)
         const j=Math.floor(Math.random()* (i+1));
         const temp=array[i];
         array[i]=array[j];
-        array[j]=temp;
+        array[j]=temp; 
     }
     let str="";
     array.forEach((el) => (str += el));
